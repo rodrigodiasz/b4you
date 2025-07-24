@@ -216,20 +216,22 @@ export default function ProductsPage() {
       />
       <div className="max-w-5xl mx-auto px-2">
         <div className="bg-background rounded-xl border shadow-sm my-5 p-2 sm:p-6">
-          <div className="mb-2 h-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Gerenciamento de Produtos
+          <div className="mb-2 h-auto flex flex-row items-center justify-between gap-2 w-full">
+            <h1 className="text-lg sm:text-3xl font-bold tracking-tight w-full">
+              <span className="block sm:hidden">Gerenciar Produtos</span>
+              <span className="hidden sm:block">Gerenciamento de Produtos</span>
             </h1>
             <Button
               onClick={() => router.push("/products/new")}
-              className="text-zinc-900 font-bold dark:text-white px-6 py-2 rounded-md shadow bg-[#20cfc7] hover:bg-[#20cfc7]/70"
+              className="text-zinc-900 font-bold dark:text-white px-3 sm:px-6 py-2 rounded-md shadow bg-[#20cfc7] hover:bg-[#20cfc7]/70 flex items-center justify-center"
             >
-              Adicionar Produto <Plus className="w-4 h-4" />
+              <span className="hidden sm:inline">Adicionar Produto </span>
+              <Plus className="w-5 h-5" />
             </Button>
           </div>
           {/* Filtros de busca, categoria e ordenação */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mb-6 justify-between w-full">
-            <div className="relative w-full sm:w-80">
+          <div className="flex justify-between flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 my-6 w-full">
+            <div className="relative w-full sm:w-4/5">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
                 <Search className="w-5 h-5" />
               </span>
@@ -241,7 +243,7 @@ export default function ProductsPage() {
                 className="pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-muted/10 w-full"
               />
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:flex sm:flex-row sm:gap-4 items-center w-full">
               <Label className="text-sm">Categoria:</Label>
               <Select
                 value={selectedCategory}
