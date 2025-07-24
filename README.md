@@ -185,6 +185,33 @@ NEXT_PUBLIC_API_URL=http://localhost:3333
 
 ---
 
+## 🤖 Funcionalidade de IA 
+
+O B4YOU possui integração com IA (ChatGPT) para auxiliar em tarefas como sugestões automáticas de nome e descrição de produtos.
+
+**Para utilizar a funcionalidade de IA, é necessário:**
+
+- Ter uma conta na [OpenAI](https://platform.openai.com/).
+- Gerar uma chave de API no painel da OpenAI.
+- Adicionar a chave no arquivo `.env` do backend.
+
+### Exemplo de variável no `.env.example` do backend:
+
+```env
+# Chave da API OpenAI para funcionalidades de IA
+OPENAI_API_KEY=sua_openai_api_key_aqui
+```
+
+> **Importante:** Sem a chave, as funções de IA não estarão disponíveis.
+
+### Como obter sua chave:
+
+1. Acesse https://platform.openai.com/api-keys
+2. Clique em "Create new secret key"
+3. Copie a chave gerada e cole na variável acima
+
+---
+
 ## 🏭 Deploy e Produção
 
 - Ajuste as variáveis de ambiente para produção (banco, JWT, Redis, etc).
