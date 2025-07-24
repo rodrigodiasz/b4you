@@ -182,6 +182,39 @@ NEXT_PUBLIC_API_URL=http://localhost:3333
 
 ---
 
+## 🧹 Padronização de Código (ESLint + Prettier)
+
+- O projeto utiliza **ESLint** para garantir boas práticas e qualidade de código (frontend).
+- O **Prettier** está configurado para formatação automática e consistente do código.
+- Para checar e corrigir o estilo de código, use:
+
+```bash
+# Checar problemas de formatação
+npm run lint      # ESLint
+npm run format    # Prettier (corrige automaticamente)
+```
+
+Sempre rode o Prettier antes de commitar para evitar erros no CI.
+
+---
+
+## 🤖 CI/CD com GitHub Actions
+
+- O repositório possui um workflow de **CI** em `.github/workflows/ci.yml`.
+- O workflow executa automaticamente em cada push ou pull request na branch `main`:
+  - **Frontend:**
+    - Instala dependências
+    - Roda ESLint
+    - Roda Prettier (checa formatação)
+    - Roda build do Next.js
+  - **Backend:**
+    - Instala dependências
+    - Roda build do TypeScript
+- Se algum passo falhar, o merge/deploy é bloqueado.
+- O deploy automático pode ser feito via Coolify ou outro serviço integrado ao GitHub.
+
+---
+
 ## 🧩 Troubleshooting
 
 - **Erro de conexão com banco:** Verifique se o MySQL está rodando e as variáveis de ambiente estão corretas.

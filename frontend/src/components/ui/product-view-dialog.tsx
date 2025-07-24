@@ -24,7 +24,7 @@ export function ProductViewDialog({ open, onOpenChange, product }: ProductViewDi
   else if (product.stock <= 30) barColor = "bg-yellow-400";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 dark:bg-black/70 backdrop-blur-md">
       <div className="bg-background rounded-xl shadow-lg p-6 w-full max-w-md">
         <div className="mb-4">
           <h2 className="text-xl font-bold mb-2">Detalhes do Produto</h2>
