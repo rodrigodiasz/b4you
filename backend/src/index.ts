@@ -32,6 +32,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.status(200).send("API funcionando!");
+});
+
 app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/products", productsRoutes);
