@@ -55,6 +55,7 @@ export default function EditProductPage() {
     setError("");
     try {
       await api.put(`/products/${id}`, values);
+      toast.success("Produto atualizado com sucesso!");
       router.push("/products");
     } catch (err: unknown) {
       if (

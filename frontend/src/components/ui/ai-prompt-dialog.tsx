@@ -1,4 +1,8 @@
 import * as React from "react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 interface AIPromptDialogProps {
   open: boolean;
@@ -40,20 +44,24 @@ export function AIPromptDialog({
       setValue("");
       setSuggestion(null);
       setIsLoading(false);
+      toast.success("Sugestão aplicada!");
     }
   };
   return open ? (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
       <div className="bg-background rounded-xl shadow-lg p-6 w-full max-w-md">
         <div className="mb-4">
-          <label className="block font-medium mb-2">{label}</label>
-          <textarea
-            className="w-full border rounded px-3 py-2 min-h-[60px] resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+          <Label className="mb-2" htmlFor="ai-context">
+            {label}
+          </Label>
+          <Textarea
+            id="ai-context"
             placeholder={placeholder}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             disabled={loading || isLoading || !!suggestion}
             autoFocus
+            className="min-h-[60px]"
           />
         </div>
         {suggestion && (
@@ -61,41 +69,31 @@ export function AIPromptDialog({
             <div className="font-semibold mb-1">Sugestão da IA:</div>
             <div className="whitespace-pre-line mb-2">{suggestion}</div>
             <div className="flex gap-2">
-              <button
-                type="button"
-                className="px-3 py-1 rounded bg-primary text-primary-foreground hover:bg-primary/90"
-                onClick={handleApply}
-              >
+              <Button type="button" onClick={handleApply}>
                 Aplicar
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
-                className="px-3 py-1 rounded bg-muted text-foreground border hover:bg-muted/80"
-                onClick={() => navigator.clipboard.writeText(suggestion)}
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  navigator.clipboard.writeText(suggestion);
+                  toast.success("Copiado para a área de transferência!");
+                }}
               >
                 Copiar
-              </button>
+              </Button>
             </div>
           </div>
         )}
         <div className="flex justify-end gap-2">
-          <button
-            type="button"
-            className="px-4 py-2 rounded bg-muted text-foreground hover:bg-muted/80"
-            onClick={handleClose}
-            disabled={isLoading}
-          >
-            Cancelar
-          </button>
+          <Button type="button" variant="default" onClick={() => onOpenChange(false)}>
+            Fechar
+          </Button>
           {!suggestion && (
-            <button
-              type="button"
-              className="px-4 py-2 rounded bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
-              onClick={handleConfirm}
-              disabled={isLoading || !value.trim()}
-            >
+            <Button type="button" onClick={handleConfirm} disabled={isLoading || !value.trim()}>
               {isLoading ? "Gerando..." : "Gerar"}
-            </button>
+            </Button>
           )}
         </div>
       </div>
