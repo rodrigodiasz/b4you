@@ -214,9 +214,9 @@ export default function ProductsPage() {
         }}
         message="Tem certeza que deseja excluir este produto?"
       />
-      <div className="max-w-5xl mx-auto">
-        <div className="bg-background rounded-xl border shadow-sm my-5 p-6">
-          <div className="mb-2 h-20 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-2">
+        <div className="bg-background rounded-xl border shadow-sm my-5 p-2 sm:p-6">
+          <div className="mb-2 h-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Gerenciamento de Produtos
             </h1>
@@ -228,7 +228,7 @@ export default function ProductsPage() {
             </Button>
           </div>
           {/* Filtros de busca, categoria e ordenação */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mb-6 justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mb-6 justify-between w-full">
             <div className="relative w-full sm:w-80">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
                 <Search className="w-5 h-5" />
@@ -292,7 +292,7 @@ export default function ProductsPage() {
               </Select>
             </div>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto w-full">
             {/* Tabela de produtos */}
             <Table className="w-full text-sm">
               <TableHeader>

@@ -47,8 +47,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="w-full max-w-sm space-y-6 rounded-xl border bg-background p-8 shadow-lg flex flex-col items-center">
+    <div className="flex min-h-screen items-center justify-center bg-muted px-2">
+      <div className="w-full max-w-sm space-y-6 rounded-xl border bg-background p-4 sm:p-8 shadow-lg flex flex-col items-center">
         <Image
           src={currentTheme === "dark" ? "/logo-white.png" : "/logo.png"}
           alt="B4YOU Logo"

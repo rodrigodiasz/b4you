@@ -75,7 +75,7 @@ export default function ProductForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full space-y-5 bg-background rounded-xl border p-6 shadow-md"
+      className="w-full space-y-5 bg-background rounded-xl border p-4 sm:p-6 shadow-md"
     >
       <AIPromptDialog
         open={iaDialogOpen === "name"}
@@ -185,7 +185,7 @@ export default function ProductForm({
       </div>
       <Button
         type="submit"
-        className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70 text-zinc-900 dark:text-white"
+        className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70 text-zinc-900 dark:text-white mt-4"
         disabled={loading}
       >
         {mode === "edit" ? "Salvar alterações" : "Criar produto"}

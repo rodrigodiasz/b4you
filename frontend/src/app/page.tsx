@@ -203,7 +203,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-2 sm:px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
           <p className="text-gray-600 dark:text-zinc-400">
@@ -227,7 +227,7 @@ export default function Home() {
         ) : (
           <>
             {/* Cards de estatísticas */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
               <StatCard
                 title="Total de Produtos"
                 value={stats.totalProducts}
@@ -259,9 +259,9 @@ export default function Home() {
             </div>
 
             {/* Ações rápidas */}
-            <div className="bg-white dark:bg-zinc-900 rounded-lg border shadow-sm p-6">
+            <div className="bg-white dark:bg-zinc-900 rounded-lg border shadow-sm p-4 sm:p-6">
               <h2 className="text-xl font-semibold mb-4">Ações Rápidas</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
                 <Button
                   onClick={() => router.push("/products")}
                   className="w-full justify-start p-4 h-auto"

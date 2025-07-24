@@ -1,5 +1,7 @@
 # B4YOU - Plataforma de Gestão de Produtos
 
+![CI](https://github.com/rodrigodiasz/b4you/actions/workflows/ci.yml/badge.svg)
+
 B4YOU é uma plataforma moderna e robusta para gestão de produtos, vendas e clientes, com dashboard analítico, autenticação JWT, filtros avançados, relatórios e uma interface intuitiva. O projeto é fullstack, com frontend em Next.js/React e backend em Node.js/Express/Sequelize.
 
 ---
