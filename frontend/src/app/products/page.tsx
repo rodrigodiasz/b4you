@@ -214,8 +214,8 @@ export default function ProductsPage() {
         }}
         message="Tem certeza que deseja excluir este produto?"
       />
-      <div className="max-w-5xl mx-auto px-2">
-        <div className="bg-background rounded-xl border shadow-sm my-5 p-2 sm:p-6">
+      <div className="max-w-5xl mx-auto px-2 py-5">
+        <div className="bg-background rounded-xl border shadow-sm p-2 sm:p-6">
           <div className="mb-2 h-auto flex flex-row items-center justify-between gap-2 w-full">
             <h1 className="text-lg sm:text-3xl font-bold tracking-tight w-full">
               <span className="block sm:hidden">Gerenciar Produtos</span>
