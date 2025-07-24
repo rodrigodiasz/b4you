@@ -33,7 +33,7 @@ services:
       REDIS_PORT: 6379
     ports:
       - "3333:3333"
-    command: npm run dev
+    command: node dist/index.js
 
   frontend:
     build: ./frontend
