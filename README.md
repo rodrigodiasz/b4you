@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/rodrigodiasz/b4you/actions/workflows/ci.yml/badge.svg)
 
-B4YOU é uma plataforma moderna e robusta para gestão de produtos, vendas e clientes, com dashboard analítico, autenticação JWT, filtros avançados, relatórios e uma interface intuitiva. O projeto é fullstack, com frontend em Next.js/React e backend em Node.js/Express/Sequelize.
+B4YOU é uma plataforma moderna e robusta para gestão de produtos com, autenticação JWT, filtros avançados, relatórios e uma interface intuitiva. O projeto é fullstack, com frontend em Next.js/React e backend em Node.js/Express/Sequelize.
 
 ---
 
@@ -10,7 +10,6 @@ B4YOU é uma plataforma moderna e robusta para gestão de produtos, vendas e cli
 
 - **Gestão de Produtos:** Cadastro, edição, exclusão, visualização e busca de produtos com categorias.
 - **Dashboard:** Estatísticas em tempo real, cards de resumo, ações rápidas.
-- **Relatórios:** Página dedicada para análises e gráficos (em breve).
 - **Autenticação JWT:** Segurança para rotas protegidas.
 - **UI/UX Moderna:** Responsivo, dark mode, componentes Shadcn UI.
 - **Filtros Avançados:** Busca, ordenação (A-Z, preço, estoque, data), filtro por categoria, paginação.
@@ -55,7 +54,6 @@ B4/
 
 - Node.js 18+
 - Docker e Docker Compose
-- (Opcional) Yarn
 
 ### 1. Clone o repositório
 
@@ -69,9 +67,9 @@ cd B4
 
 ```bash
 # Backend
-yarn install # ou npm install
+npm install # ou yarn install
 cd ../frontend
-yarn install # ou npm install
+npm install # ou yarn install
 ```
 
 ### 3. Configure as variáveis de ambiente
@@ -166,7 +164,6 @@ NEXT_PUBLIC_API_URL=http://localhost:3333
 - [x] CRUD de produtos com categorias
 - [x] Busca, filtro por categoria, ordenação, paginação
 - [x] Dashboard com cards de estatísticas
-- [x] Relatórios (em breve)
 - [x] UI responsiva, dark mode, componentes modernos
 - [x] Notificações de sucesso/erro
 - [x] Proteção de rotas (só acessa produtos/relatórios logado)
