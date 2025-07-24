@@ -34,7 +34,7 @@ module.exports = {
           name: "Produto 4",
           price: 40.99,
           description: "Descrição do Produto 4",
-          stock: 0,
+          stock: 20,
           category: "Esportes",
           createdAt: new Date(),
           updatedAt: new Date(),
