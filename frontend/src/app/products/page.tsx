@@ -292,16 +292,26 @@ export default function ProductsPage() {
               </Select>
             </div>
           </div>
-          <div className="overflow-x-auto w-full">
+          <div className="overflow-x-auto w-full min-w-[340px]">
             {/* Tabela de produtos */}
-            <Table className="w-full text-sm">
+            <Table className="w-full text-xs sm:text-sm min-w-[600px]">
               <TableHeader>
                 <TableRow className="bg-muted/50">
-                  <TableHead className="p-4 text-left font-semibold w-64">Produto</TableHead>
-                  <TableHead className="p-4 text-left font-semibold w-40">Categoria</TableHead>
-                  <TableHead className="p-4 text-right font-semibold w-32">Preço</TableHead>
-                  <TableHead className="p-4 text-right font-semibold w-24">Estoque</TableHead>
-                  <TableHead className="p-4 text-center font-semibold w-12"> </TableHead>
+                  <TableHead className="p-2 sm:p-4 text-left font-semibold w-48 sm:w-64">
+                    Produto
+                  </TableHead>
+                  <TableHead className="p-2 sm:p-4 text-left font-semibold w-28 sm:w-40">
+                    Categoria
+                  </TableHead>
+                  <TableHead className="p-2 sm:p-4 text-right font-semibold w-20 sm:w-32">
+                    Preço
+                  </TableHead>
+                  <TableHead className="p-2 sm:p-4 text-right font-semibold w-16 sm:w-24">
+                    Estoque
+                  </TableHead>
+                  <TableHead className="p-2 sm:p-4 text-center font-semibold w-8 sm:w-12">
+                    {" "}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -338,7 +348,7 @@ export default function ProductsPage() {
                         }
                         style={{ height: 64 }}
                       >
-                        <TableCell className="p-4 flex items-center gap-4">
+                        <TableCell className="p-2 sm:p-4 flex items-center gap-2 sm:gap-4">
                           {/* Avatar do produto (primeira letra) */}
                           <div className="w-10 h-10 rounded-md bg-muted flex items-center justify-center font-bold text-lg text-muted-foreground uppercase">
                             {product.name.charAt(0)}
@@ -350,14 +360,18 @@ export default function ProductsPage() {
                             <div className="text-xs text-muted-foreground">ID: {product.id}</div>
                           </div>
                         </TableCell>
-                        <TableCell className="p-4 text-muted-foreground">{category}</TableCell>
-                        <TableCell className="p-4 text-right font-semibold text-foreground">
+                        <TableCell className="p-2 sm:p-4 text-muted-foreground">
+                          {category}
+                        </TableCell>
+                        <TableCell className="p-2 sm:p-4 text-right font-semibold text-foreground">
                           R${product.price.toFixed(2)}
                         </TableCell>
-                        <TableCell className={"p-4 text-right font-semibold text-foreground"}>
+                        <TableCell
+                          className={"p-2 sm:p-4 text-right font-semibold text-foreground"}
+                        >
                           {product.stock}
                         </TableCell>
-                        <TableCell className="p-4 text-center">
+                        <TableCell className="p-2 sm:p-4 text-center">
                           {/* Menu de ações (visualizar, editar, excluir) */}
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>

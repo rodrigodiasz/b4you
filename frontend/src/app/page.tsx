@@ -144,16 +144,16 @@ export default function Home() {
     return (
       <div className="min-h-screen ">
         <Navbar />
-        <main className="flex flex-1 flex-col items-center justify-center gap-8 px-4 py-16">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        <main className="flex flex-1 flex-col items-center justify-center gap-6 px-2 sm:px-4 py-8 sm:py-16 w-full">
+          <div className="text-center max-w-2xl sm:max-w-4xl mx-auto px-2">
+            <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Bem-vindo à <span className="text-[#20cfc7]">B4YOU</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-white mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl text-gray-600 dark:text-white mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
               A plataforma definitiva para marcas que querem potencializar as vendas, ter total
               controle da operação e escalar com creators afiliados.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full">
               <Button
                 size="lg"
                 className="text-lg px-8 py-4 bg-[#20cfc7] hover:bg-[#20cfc7]/70"
@@ -165,31 +165,33 @@ export default function Home() {
           </div>
 
           {/* Seção de recursos */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mt-8 sm:mt-16 max-w-2xl sm:max-w-5xl mx-auto w-full px-2">
+            <div className="text-center p-4 sm:p-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Package className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Gestão de Produtos</h3>
-              <p className="text-gray-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Gestão de Produtos</h3>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm sm:text-base">
                 Controle total do seu inventário com ferramentas avançadas de gestão.
               </p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-4 sm:p-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <TrendingUp className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Analytics Avançado</h3>
-              <p className="text-gray-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Analytics Avançado</h3>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm sm:text-base">
                 Dashboards em tempo real com métricas detalhadas do seu negócio.
               </p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-4 sm:p-6">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <WandSparkles className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Inteligência Artificial</h3>
-              <p className="text-gray-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
+                Inteligência Artificial
+              </h3>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm sm:text-base">
                 Auxilio de IA para o seu negócio, criando produtos, categorias, descrições, etc.
               </p>
             </div>
