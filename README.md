@@ -6,6 +6,21 @@ B4YOU é uma plataforma moderna e robusta para gestão de produtos com, autentic
 
 ---
 
+
+## 🌐 Deploy em Nuvem (Demonstração)
+A versão mais recente do projeto está disponível online para testes:
+https://b4you.rodrigoliveira.space/
+
+Hospedagem: Todo o projeto está rodando em uma VPS própria utilizando Coolify, com containers orquestrados via Docker Compose.
+
+Frontend: Aplicação Next.js.
+
+Backend: API Node.js com Express, conectada ao MySQL e Redis.
+
+Funcionalidades ativas: Login JWT, CRUD de produtos, filtros, dashboard e dark mode.
+
+---
+
 ## 🚀 Visão Geral
 
 - **Gestão de Produtos:** Cadastro, edição, exclusão, visualização e busca de produtos com categorias.
