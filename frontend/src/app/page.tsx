@@ -1,7 +1,6 @@
 "use client";
 import Navbar from "../components/Navbar";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -15,6 +14,7 @@ import {
   PackagePlus,
 } from "lucide-react";
 import api from "@/lib/api";
+import { ElementType } from "react";
 
 interface DashboardStats {
   totalProducts: number;
@@ -27,9 +27,9 @@ interface DashboardStats {
   customersGrowth: number;
 }
 
+type Product = { stock?: number };
+
 export default function Home() {
-  const { theme, resolvedTheme } = useTheme();
-  const currentTheme = theme === "system" ? resolvedTheme : theme;
   const router = useRouter();
   const [isLogged, setIsLogged] = useState(false);
   const [stats, setStats] = useState<DashboardStats>({
@@ -66,7 +66,7 @@ export default function Home() {
 
       // Calcular estoque total real dos produtos
       const totalStock = productsResponse.data.reduce(
-        (sum: number, product: any) => sum + (product.stock || 0),
+        (sum: number, product: Product) => sum + (product.stock || 0),
         0
       );
 
@@ -112,7 +112,7 @@ export default function Home() {
     title: string;
     value: number;
     growth: number;
-    icon: any;
+    icon: ElementType;
     formatValue?: (val: number) => string;
   }) => (
     <div className="bg-white dark:bg-zinc-900 rounded-lg border shadow-sm p-6">
@@ -171,7 +171,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Seção de recursos */}   
+          {/* Seção de recursos */}
           <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
