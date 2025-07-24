@@ -6,10 +6,7 @@ import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 
-function ThemeSwitch({
-  className,
-  ...props
-}: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+function ThemeSwitch({ className, ...props }: React.ComponentProps<typeof SwitchPrimitive.Root>) {
   const { theme, setTheme, resolvedTheme } = useTheme();
 
   const isDark = resolvedTheme === "dark";

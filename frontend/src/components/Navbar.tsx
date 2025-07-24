@@ -40,10 +40,14 @@ export default function Navbar() {
       <div className="flex items-center gap-2">
         <ThemeSwitch />
         {isLogged ? (
-          <Button onClick={() => {
-            handleLogout();
-            toast.success("Logout realizado com sucesso");
-          }} variant="destructive" className="px-4">
+          <Button
+            onClick={() => {
+              handleLogout();
+              toast.success("Logout realizado com sucesso");
+            }}
+            variant="destructive"
+            className="px-4"
+          >
             Sair <LogOut className="w-4 h-4" />
           </Button>
         ) : (

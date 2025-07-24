@@ -12,12 +12,7 @@ import ConfirmDialog from "@/components/ui/confirm-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
-import {
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
   Table,
   TableBody,
@@ -159,9 +154,7 @@ export default function ProductsPage() {
       products.filter(
         (product) =>
           (product.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-            product.description
-              .toLowerCase()
-              .includes(debouncedSearch.toLowerCase())) &&
+            product.description.toLowerCase().includes(debouncedSearch.toLowerCase())) &&
           (selectedCategory === "all" || product.category === selectedCategory)
       ),
     [products, debouncedSearch, selectedCategory]
@@ -193,11 +186,7 @@ export default function ProductsPage() {
   // Paginação dos produtos
   const totalPages = Math.ceil(sortedProducts.length / itemsPerPage);
   const paginatedProducts = useMemo(
-    () =>
-      sortedProducts.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      ),
+    () => sortedProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage),
     [sortedProducts, currentPage]
   );
 
@@ -205,8 +194,6 @@ export default function ProductsPage() {
   useEffect(() => {
     setCurrentPage(1);
   }, [debouncedSearch, selectedCategory]);
-
-
 
   return (
     <div className="min-h-screen bg-muted/30">
@@ -295,18 +282,10 @@ export default function ProductsPage() {
                 <SelectContent>
                   <SelectItem value="id_desc">Mais recente</SelectItem>
                   <SelectItem value="id_asc">Mais antigo</SelectItem>
-                  <SelectItem value="price_desc">
-                    Preço: Maior para Menor
-                  </SelectItem>
-                  <SelectItem value="price_asc">
-                    Preço: Menor para Maior
-                  </SelectItem>
-                  <SelectItem value="stock_desc">
-                    Estoque: Maior para Menor
-                  </SelectItem>
-                  <SelectItem value="stock_asc">
-                    Estoque: Menor para Maior
-                  </SelectItem>
+                  <SelectItem value="price_desc">Preço: Maior para Menor</SelectItem>
+                  <SelectItem value="price_asc">Preço: Menor para Maior</SelectItem>
+                  <SelectItem value="stock_desc">Estoque: Maior para Menor</SelectItem>
+                  <SelectItem value="stock_asc">Estoque: Menor para Maior</SelectItem>
                   <SelectItem value="name_asc">Nome: A-Z</SelectItem>
                   <SelectItem value="name_desc">Nome: Z-A</SelectItem>
                 </SelectContent>
@@ -318,30 +297,17 @@ export default function ProductsPage() {
             <Table className="w-full text-sm">
               <TableHeader>
                 <TableRow className="bg-muted/50">
-                  <TableHead className="p-4 text-left font-semibold w-64">
-                    Produto
-                  </TableHead>
-                  <TableHead className="p-4 text-left font-semibold w-40">
-                    Categoria
-                  </TableHead>
-                  <TableHead className="p-4 text-right font-semibold w-32">
-                    Preço
-                  </TableHead>
-                  <TableHead className="p-4 text-right font-semibold w-24">
-                    Estoque
-                  </TableHead>
-                  <TableHead className="p-4 text-center font-semibold w-12">
-                    {" "}
-                  </TableHead>
+                  <TableHead className="p-4 text-left font-semibold w-64">Produto</TableHead>
+                  <TableHead className="p-4 text-left font-semibold w-40">Categoria</TableHead>
+                  <TableHead className="p-4 text-right font-semibold w-32">Preço</TableHead>
+                  <TableHead className="p-4 text-right font-semibold w-24">Estoque</TableHead>
+                  <TableHead className="p-4 text-center font-semibold w-12"> </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {loading ? (
                   <TableRow>
-                    <TableCell
-                      colSpan={6}
-                      className="p-8 text-center text-muted-foreground"
-                    >
+                    <TableCell colSpan={6} className="p-8 text-center text-muted-foreground">
                       <LoadingSpinner size={24} />
                     </TableCell>
                   </TableRow>
@@ -356,10 +322,7 @@ export default function ProductsPage() {
                   </TableRow>
                 ) : paginatedProducts.length === 0 ? (
                   <TableRow>
-                    <TableCell
-                      colSpan={6}
-                      className="p-8 text-center text-muted-foreground"
-                    >
+                    <TableCell colSpan={6} className="p-8 text-center text-muted-foreground">
                       Nenhum produto encontrado.
                     </TableCell>
                   </TableRow>
@@ -384,33 +347,21 @@ export default function ProductsPage() {
                             <div className="font-medium text-base text-foreground leading-tight">
                               {product.name}
                             </div>
-                            <div className="text-xs text-muted-foreground">
-                              ID: {product.id}
-                            </div>
+                            <div className="text-xs text-muted-foreground">ID: {product.id}</div>
                           </div>
                         </TableCell>
-                        <TableCell className="p-4 text-muted-foreground">
-                          {category}
-                        </TableCell>
+                        <TableCell className="p-4 text-muted-foreground">{category}</TableCell>
                         <TableCell className="p-4 text-right font-semibold text-foreground">
                           R${product.price.toFixed(2)}
                         </TableCell>
-                        <TableCell
-                          className={
-                            "p-4 text-right font-semibold text-foreground"
-                          }
-                        >
+                        <TableCell className={"p-4 text-right font-semibold text-foreground"}>
                           {product.stock}
                         </TableCell>
                         <TableCell className="p-4 text-center">
                           {/* Menu de ações (visualizar, editar, excluir) */}
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                              <Button
-                                size="icon"
-                                variant="ghost"
-                                className="rounded-full"
-                              >
+                              <Button size="icon" variant="ghost" className="rounded-full">
                                 <MoreHorizontal className="w-5 h-5" />
                               </Button>
                             </DropdownMenuTrigger>
@@ -433,9 +384,7 @@ export default function ProductsPage() {
                               </DropdownMenuItem>
                               <DropdownMenuItem
                                 className="flex items-center gap-2 px-2 py-2 rounded hover:bg-accent cursor-pointer text-sm"
-                                onSelect={() =>
-                                  router.push(`/products/${product.id}/edit`)
-                                }
+                                onSelect={() => router.push(`/products/${product.id}/edit`)}
                               >
                                 <Pencil className="w-4 h-4" /> Editar
                               </DropdownMenuItem>
@@ -444,8 +393,7 @@ export default function ProductsPage() {
                                 className="flex items-center gap-2 px-2 py-2 rounded hover:bg-destructive/20 text-[#ff0000] cursor-pointer text-sm"
                                 onSelect={() => handleDelete(product.id)}
                               >
-                                <Trash className="w-4 h-4" color="#ff0000" />{" "}
-                                Excluir
+                                <Trash className="w-4 h-4" color="#ff0000" /> Excluir
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
@@ -465,9 +413,7 @@ export default function ProductsPage() {
                   <PaginationPrevious
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                     aria-disabled={currentPage === 1}
-                    className={
-                      currentPage === 1 ? "pointer-events-none opacity-50" : ""
-                    }
+                    className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
                   />
                 </PaginationItem>
                 {Array.from({ length: totalPages }, (_, i) => (
@@ -482,15 +428,9 @@ export default function ProductsPage() {
                 ))}
                 <PaginationItem>
                   <PaginationNext
-                    onClick={() =>
-                      setCurrentPage((p) => Math.min(totalPages, p + 1))
-                    }
+                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                     aria-disabled={currentPage === totalPages}
-                    className={
-                      currentPage === totalPages
-                        ? "pointer-events-none opacity-50"
-                        : ""
-                    }
+                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
                   />
                 </PaginationItem>
               </PaginationContent>

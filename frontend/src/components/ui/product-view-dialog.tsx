@@ -13,19 +13,12 @@ interface ProductViewDialogProps {
   product: Product | null;
 }
 
-export function ProductViewDialog({
-  open,
-  onOpenChange,
-  product,
-}: ProductViewDialogProps) {
+export function ProductViewDialog({ open, onOpenChange, product }: ProductViewDialogProps) {
   if (!open || !product) return null;
 
   // Definir limites para o gráfico
   const maxStock = 100; // valor máximo para barra cheia
-  const stockPercent = Math.min(
-    100,
-    Math.round((product.stock / maxStock) * 100)
-  );
+  const stockPercent = Math.min(100, Math.round((product.stock / maxStock) * 100));
   let barColor = "bg-green-500";
   if (product.stock <= 10) barColor = "bg-red-500";
   else if (product.stock <= 30) barColor = "bg-yellow-400";
@@ -45,8 +38,7 @@ export function ProductViewDialog({
             </div>
           </div>
           <div className="mb-2">
-            <span className="font-semibold">Preço:</span> R${" "}
-            {product.price.toFixed(2)}
+            <span className="font-semibold">Preço:</span> R$ {product.price.toFixed(2)}
           </div>
           <div className="mb-2">
             <span className="font-semibold">Estoque:</span> {product.stock}

@@ -38,9 +38,7 @@ export default function NewProductPage() {
         typeof err.response.data === "object" &&
         "error" in err.response.data
       ) {
-        const errorMsg =
-          (err.response.data as { error?: string }).error ||
-          "Erro ao criar produto";
+        const errorMsg = (err.response.data as { error?: string }).error || "Erro ao criar produto";
         const errorList = errorMsg.split(",").map((e: string) => e.trim());
         errorList.forEach((e) => toast.error(e));
       } else {

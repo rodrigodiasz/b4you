@@ -27,10 +27,15 @@ export default function ReportsPage() {
             Em breve: Relatórios detalhados do seu negócio!
           </h2>
           <p className="text-muted-foreground text-center mb-6 max-w-xl">
-            Aqui você poderá visualizar gráficos, métricas e análises avançadas
-            sobre vendas, estoque, clientes e muito mais.
+            Aqui você poderá visualizar gráficos, métricas e análises avançadas sobre vendas,
+            estoque, clientes e muito mais.
           </p>
-          <Button onClick={() => router.push("/")} className="bg-muted hover:bg-muted/60 text-zinc-900 dark:text-white">Voltar ao Dashboard</Button>
+          <Button
+            onClick={() => router.push("/")}
+            className="bg-muted hover:bg-muted/60 text-zinc-900 dark:text-white"
+          >
+            Voltar ao Dashboard
+          </Button>
         </div>
       </main>
     </div>

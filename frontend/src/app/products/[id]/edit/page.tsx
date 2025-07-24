@@ -69,8 +69,7 @@ export default function EditProductPage() {
         "error" in err.response.data
       ) {
         const errorMsg =
-          (err.response.data as { error?: string }).error ||
-          "Erro ao salvar produto";
+          (err.response.data as { error?: string }).error || "Erro ao salvar produto";
         const errorList = errorMsg.split(",").map((e: string) => e.trim());
         errorList.forEach((e) => toast.error(e));
       } else {

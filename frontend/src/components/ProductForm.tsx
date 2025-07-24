@@ -114,8 +114,7 @@ export default function ProductForm({
             disabled={loading || loadingName}
             className="ml-2"
           >
-            {loadingName ? "Gerando..." : "Gerar com IA"}{" "}
-            <WandSparkles className="w-4 h-4" />
+            {loadingName ? "Gerando..." : "Gerar com IA"} <WandSparkles className="w-4 h-4" />
           </Button>
         </div>
         <Input
@@ -137,8 +136,7 @@ export default function ProductForm({
             disabled={loading || loadingDesc}
             className="ml-2"
           >
-            {loadingDesc ? "Gerando..." : "Gerar com IA"}{" "}
-            <WandSparkles className="w-4 h-4" />
+            {loadingDesc ? "Gerando..." : "Gerar com IA"} <WandSparkles className="w-4 h-4" />
           </Button>
         </div>
         <Input
@@ -185,7 +183,11 @@ export default function ProductForm({
           placeholder="Estoque"
         />
       </div>
-      <Button type="submit" className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70 text-zinc-900 dark:text-white" disabled={loading}>
+      <Button
+        type="submit"
+        className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70 text-zinc-900 dark:text-white"
+        disabled={loading}
+      >
         {mode === "edit" ? "Salvar alterações" : "Criar produto"}
         {mode === "edit" ? <Save className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
       </Button>

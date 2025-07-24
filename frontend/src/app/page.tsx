@@ -117,9 +117,7 @@ export default function Home() {
   }) => (
     <div className="bg-white dark:bg-zinc-900 rounded-lg border shadow-sm p-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-gray-600 dark:text-zinc-400">
-          {title}
-        </h3>
+        <h3 className="text-sm font-medium text-gray-600 dark:text-zinc-400">{title}</h3>
         <Icon className="w-5 h-5 text-gray-400 dark:text-zinc-400" />
       </div>
       <div className="mb-2">
@@ -133,11 +131,7 @@ export default function Home() {
         ) : (
           <ArrowDown className="w-4 h-4 text-red-500 mr-1" />
         )}
-        <span
-          className={`text-sm font-medium ${
-            growth >= 0 ? "text-green-600" : "text-red-600"
-          }`}
-        >
+        <span className={`text-sm font-medium ${growth >= 0 ? "text-green-600" : "text-red-600"}`}>
           {growth >= 0 ? "+" : ""}
           {growth.toFixed(1)}% do mês passado
         </span>
@@ -156,9 +150,8 @@ export default function Home() {
               Bem-vindo à <span className="text-[#20cfc7]">B4YOU</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-white mb-8 max-w-2xl mx-auto leading-relaxed">
-              A plataforma definitiva para marcas que querem potencializar as
-              vendas, ter total controle da operação e escalar com creators
-              afiliados.
+              A plataforma definitiva para marcas que querem potencializar as vendas, ter total
+              controle da operação e escalar com creators afiliados.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -179,8 +172,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Gestão de Produtos</h3>
               <p className="text-gray-600 dark:text-zinc-400">
-                Controle total do seu inventário com ferramentas avançadas de
-                gestão.
+                Controle total do seu inventário com ferramentas avançadas de gestão.
               </p>
             </div>
             <div className="text-center p-6">
@@ -196,12 +188,9 @@ export default function Home() {
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <WandSparkles className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">
-                Inteligência Artificial
-              </h3>
+              <h3 className="text-xl font-semibold mb-2">Inteligência Artificial</h3>
               <p className="text-gray-600 dark:text-zinc-400">
-                Auxilio de IA para o seu negócio, criando produtos, categorias,
-                descrições, etc.
+                Auxilio de IA para o seu negócio, criando produtos, categorias, descrições, etc.
               </p>
             </div>
           </div>
@@ -216,9 +205,7 @@ export default function Home() {
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Dashboard
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
           <p className="text-gray-600 dark:text-zinc-400">
             Bem-vindo de volta! Aqui está um resumo do seu negócio.
           </p>
@@ -315,9 +302,7 @@ export default function Home() {
                     <div className="font-medium text-zinc-900 dark:text-zinc-400">
                       Ver Relatórios
                     </div>
-                    <div className="text-sm text-gray-500 dark:text-zinc-400">
-                      Analisar dados
-                    </div>
+                    <div className="text-sm text-gray-500 dark:text-zinc-400">Analisar dados</div>
                   </div>
                 </Button>
               </div>

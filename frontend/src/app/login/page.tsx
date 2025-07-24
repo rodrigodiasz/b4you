@@ -37,10 +37,7 @@ export default function LoginPage() {
         typeof err.response.data === "object" &&
         "message" in err.response.data
       ) {
-        setError(
-          (err.response.data as { message?: string }).message ||
-            "Erro ao fazer login"
-        );
+        setError((err.response.data as { message?: string }).message || "Erro ao fazer login");
       } else {
         setError("Erro ao fazer login");
       }
@@ -59,9 +56,7 @@ export default function LoginPage() {
           height={100}
           className="mb-4"
         />
-        <h1 className="text-2xl font-bold text-center mb-2">
-          Entrar na plataforma
-        </h1>
+        <h1 className="text-2xl font-bold text-center mb-2">Entrar na plataforma</h1>
         <form onSubmit={handleSubmit} className="w-full space-y-6">
           <div className="space-y-2">
             <Label htmlFor="email">E-mail</Label>
@@ -92,7 +87,11 @@ export default function LoginPage() {
               {error}
             </div>
           )}
-          <Button type="submit" className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70" disabled={loading}>
+          <Button
+            type="submit"
+            className="w-full bg-[#20cfc7] hover:bg-[#20cfc7]/70"
+            disabled={loading}
+          >
             {loading ? "Entrando..." : "Entrar"}
           </Button>
         </form>
