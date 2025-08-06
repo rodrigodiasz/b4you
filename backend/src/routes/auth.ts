@@ -1,9 +1,16 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+// Carregar variáveis de ambiente
+dotenv.config();
 
 const router = Router();
 const SECRET = process.env.JWT_SECRET as string;
-const USER = { email: process.env.EMAIL as string, password: process.env.PASSWORD as string };
+const USER = {
+  email: process.env.EMAIL as string,
+  password: process.env.PASSWORD as string,
+};
 
 router.post("/login", (req, res) => {
   const { email, password } = req.body;

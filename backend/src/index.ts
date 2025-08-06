@@ -4,6 +4,10 @@ import { Dialect, Sequelize } from "sequelize";
 import { initProductModel } from "./models/product";
 import authRoutes from "./routes/auth";
 import productsRoutes from "./routes/products";
+import dotenv from "dotenv";
+
+// Carregar variáveis de ambiente
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
@@ -28,7 +32,7 @@ const allowedOrigins = [process.env.CORS_ORIGIN as string];
 app.use(
   cors({
     origin: allowedOrigins,
-    credentials: true, 
+    credentials: true,
   })
 );
 
